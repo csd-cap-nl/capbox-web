@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UsersComponent } from './users/users.component';
 import {UserService} from "./services/user.service";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {UserService} from "./services/user.service";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
