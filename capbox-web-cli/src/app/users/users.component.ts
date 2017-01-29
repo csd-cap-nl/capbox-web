@@ -14,7 +14,7 @@ export class UsersComponent implements OnInit {
   users: User[];
   selectedUser: User;
 
-  constructor(private userService: UserService,
+  constructor(private _userService: UserService,
               private router: Router){
   }
 
@@ -31,7 +31,13 @@ export class UsersComponent implements OnInit {
     //this.userService.getHeroes().then(heroes => this.heroes = heroes);
     //this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
 
-
+//    this.users = [];
+    this._userService.getMockUsers()
+    //    this._userService.getUsers()
+      .subscribe(
+        data => this.users = data
+        //, error => this.error = "Region " + this.region + " is invalid."
+      );
   }
 
   gotoDetail(): void {

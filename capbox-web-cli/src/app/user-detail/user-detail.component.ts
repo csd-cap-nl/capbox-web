@@ -16,14 +16,15 @@ export class UserDetailComponent implements OnInit {
   user: User;
 
   constructor(
-    private userService: UserService,
+    private _userService: UserService,
     private route: ActivatedRoute,
     private location: Location
   ) {}
 
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.userService.getUsers())
+//      .switchMap((params: Params) => this._userService.getUsers())
+      .switchMap((params: Params) => this._userService.getMockUser(+params['id']))
 //      .switchMap((params: Params) => this.userService.getHero(+params['id']))
       .subscribe(user => this.user = user);
   }
