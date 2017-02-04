@@ -4,7 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
 import { AppComponent }  from './app.component';
-import { DashboardComponent }  from './dashboard.component';
+import { DashboardComponent }  from './dashboard/dashboard.component';
+import { UsersComponent }  from './users/users.component';
+import { UserDetailComponent }  from './user-detail/user-detail.component';
+import { UserService }  from './services/user.service';
 
 import { routing } from './app.routing';
 
@@ -18,10 +21,12 @@ import { routing } from './app.routing';
     ],
     declarations: [
         AppComponent,
-        DashboardComponent
+        DashboardComponent,
+        UsersComponent,
+        UserDetailComponent
     ],
     providers: [
-        //UserService
+        UserService
     ],
     bootstrap: [AppComponent]
 })
