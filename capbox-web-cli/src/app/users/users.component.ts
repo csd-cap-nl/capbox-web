@@ -32,10 +32,12 @@ export class UsersComponent implements OnInit {
     //this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
 
 //    this.users = [];
-    this._userService.getMockUsers()
-    //    this._userService.getUsers()
+    //this._userService.getMockUsers()
+        this._userService.getUsers()
       .subscribe(
         data => this.users = data
+//    heroes => this.heroes = heroes,
+          //    error =>  this.errorMessage = <any>error);
         //, error => this.error = "Region " + this.region + " is invalid."
       );
   }

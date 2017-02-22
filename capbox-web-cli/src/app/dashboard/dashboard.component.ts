@@ -17,8 +17,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     //this.error = "";
     this.users = [];
-    this._userService.getMockUsers()
-//    this._userService.getUsers()
+//    this._userService.getMockUsers()
+    this._userService.getUsers()
       .subscribe(
         data => this.users = data.slice(1,5)
         //, error => this.error = "Region " + this.region + " is invalid."

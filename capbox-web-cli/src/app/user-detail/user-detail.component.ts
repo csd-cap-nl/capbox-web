@@ -21,13 +21,21 @@ export class UserDetailComponent implements OnInit {
     private location: Location
   ) {}
 
+  //DIT WERKT:
   ngOnInit(): void {
+    console.log('id==');
     this.route.params
-//      .switchMap((params: Params) => this._userService.getUsers())
-      .switchMap((params: Params) => this._userService.getMockUser(+params['id']))
-//      .switchMap((params: Params) => this.userService.getHero(+params['id']))
+      .switchMap((params: Params) => this._userService.getUserById(+params['id']))
       .subscribe(user => this.user = user);
   }
+
+//  ngOnInit(): void {
+//    console.log('id==');
+
+//    this.user = this._userService.getUser(+this.route.params['id']);
+//    //this.user = this._userService.getUser(1);
+//  }
+
 
   goBack(): void {
     this.location.back();
