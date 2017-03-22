@@ -1,6 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {User} from "../model/user";
-import {Params, ActivatedRoute} from "@angular/router";
+import {Params, ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../services/user.service";
 import 'rxjs/add/operator/switchMap';
 import { Location }                 from '@angular/common';
@@ -18,6 +18,7 @@ export class UserDetailComponent implements OnInit {
   constructor(
     private _userService: UserService,
     private route: ActivatedRoute,
+    private router: Router,
     private location: Location
   ) {}
 
@@ -25,7 +26,6 @@ export class UserDetailComponent implements OnInit {
     console.log('id==');
 
     this.route.params.forEach((params:Params) => {
-      debugger;
       let id = +params['id'];
 
       if (id) {
@@ -39,6 +39,15 @@ export class UserDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    debugger;
+    this._userService.addUser(this.user)
+    .subscribe(
+        id => this.router.navigate(['.']),
+        error => console.log('error adding user')
+    );
   }
 
 }
