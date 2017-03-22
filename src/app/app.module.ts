@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component.ts';
-import { DashboardComponent } from './dashboard/dashboard.component.ts';
-import { UserDetailComponent } from './user-detail/user-detail.component.ts';
-import { UsersComponent } from './users/users.component.ts';
-import {UserService} from "./services/user.service.ts";
-import {AppRoutingModule} from "./app-routing.module.ts";
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UsersComponent } from './users/users.component';
+import {UserService} from "./services/user.service";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
