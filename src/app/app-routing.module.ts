@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard',  component: DashboardComponent },
   { path: 'detail/:id', component: UserDetailComponent },
-  { path: 'users',     component: UsersComponent }
+  { path: 'users',     component: UsersComponent },
+  { path: 'add', component: UserDetailComponent}
 ];
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
