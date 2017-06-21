@@ -22,19 +22,19 @@ export class UserDetailComponent implements OnInit {
   ) {}
 
   //DIT WERKT:
-  ngOnInit(): void {
-    console.log('id==');
-    this.route.params
-      .switchMap((params: Params) => this._userService.getUserById(+params['id']))
-      .subscribe(user => this.user = user);
-  }
+  // ngOnInit(): void {
+  //   console.log('id==');
+  //   this.route.params
+  //     .switchMap((params: Params) => this._userService.getUserById(+params['id']))
+  //     .subscribe(user => this.user = user);
+  // }
 
-//  ngOnInit(): void {
-//    console.log('id==');
+ ngOnInit(): void {
+   console.log('id==');
 
-//    this.user = this._userService.getUser(+this.route.params['id']);
-//    //this.user = this._userService.getUser(1);
-//  }
+   //this.user = this._userService.getUser(+this.route.params['id']);
+    this.user = this._userService.getUser(1);
+ }
 
 
   goBack(): void {

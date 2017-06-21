@@ -50,6 +50,7 @@ export class UserService {
     this.getUsers().subscribe(data => this.users = data);
 //    this.users = this.http.get(this.getAllUsers_url).map(res => res.json()).map(this.mapUsers);
 
+    console.log('halverwege');
     for (let user of this.users) {
       console.log('in loop:' + user); // 1, "string", false
       console.log("gggetUser=" + user.id);
